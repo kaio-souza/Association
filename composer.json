@@ -1,0 +1,18 @@
+{
+    "name": "kaio-souza/association",
+    "description": "A Simple implementation of Association algorithm.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "KaioSouza\\Association\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kaio Souza",
+            "email": "profkaio@outlook.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
