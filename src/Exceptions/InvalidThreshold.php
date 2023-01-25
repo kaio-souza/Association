@@ -1,11 +1,11 @@
 <?php
 
 
-namespace KaioSouza\Association\Exceptions;
+namespace Association\Exceptions;
 
 
-use KaioSouza\Association\Constants\ErrorCodes;
-use KaioSouza\Association\Constants\ErrorMessages;
+use Association\Constants\ErrorCodes;
+use Association\Constants\ErrorMessages;
 use Throwable;
 
 class InvalidThreshold extends \Exception

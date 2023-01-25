@@ -8,10 +8,10 @@ use Association\Constants\ErrorCodes;
 use Association\Constants\ErrorMessages;
 use Throwable;
 
-class InsufficientItems extends \Exception
+class DatasetNotDefined extends \Exception
 {
     public function __construct(Throwable $previous = null)
     {
-        parent::__construct(ErrorMessages::INSUFFICIENT_ITEMS, ErrorCodes::INVALID_INPUT, $previous);
+        parent::__construct(ErrorMessages::DATA_SET_NOT_DEFINED, ErrorCodes::UTILIZATION_ERROR, $previous);
     }
 }

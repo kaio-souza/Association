@@ -13,7 +13,7 @@ $dataset = [
     ['Limão', 'Carne', 'Fraldas'],
 ];
 
-$associate = new \KaioSouza\Association\Association($dataset);
+$associate = new \Association\Association($dataset);
 
 print_r($associate->getMoreFrequentlyItem()); // 1 Item sem a estatistica de suporte
 echo "\n";

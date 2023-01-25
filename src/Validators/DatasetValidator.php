@@ -1,11 +1,11 @@
 <?php
 
 
-namespace KaioSouza\Association\Validators;
+namespace Association\Validators;
 
 
-use KaioSouza\Association\Exceptions\InsufficientItems;
-use KaioSouza\Association\Exceptions\InvalidDataSet;
+use Association\Exceptions\InsufficientItems;
+use Association\Exceptions\InvalidDataSet;
 
 class DatasetValidator
 {

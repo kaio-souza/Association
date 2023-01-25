@@ -1,22 +1,24 @@
 <?php
 
-namespace KaioSouza\Association;
+namespace Association;
 
-use KaioSouza\Association\Exceptions\InvalidInputToAssociate;
-use KaioSouza\Association\Services\AssociationService;
+use Association\Exceptions\InvalidInputToAssociate;
+use Association\Helpers\Importation;
+use Association\Services\AssociationService;
 
 class Association
 {
     private $associationService;
 
-    public function __construct($dataset, $threshold = null)
+    public function __construct($dataset = null, $threshold = null)
     {
-        // TODO: Implements optional Dataset
+
         $this->associationService = new AssociationService($dataset, $threshold);
     }
 
     public function getMoreFrequentlyItem($length = 1, $showSupportValue = false)
     {
+        $this->associationService->validateDataSet();
         $results = array_slice($this->associationService->supportList[0], 0, $length);
 
         if ($length == 1 && !$showSupportValue)
@@ -27,6 +29,8 @@ class Association
 
     public function getCombinations($value, $length = 1, $showSupportValue = false)
     {
+        $this->associationService->validateDataSet();
+
         if (!isset($this->associationService->supportList[1][$value]))
             throw new InvalidInputToAssociate;
 
@@ -37,4 +41,11 @@ class Association
 
         return $showSupportValue ? $results : array_keys($results);
     }
+
+    public function setDataset( $dataset){
+        $this->associationService->setDataset($dataset);
+        return $this;
+    }
+
+
 }

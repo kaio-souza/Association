@@ -1,20 +1,22 @@
 <?php
 require_once '../vendor/autoload.php';
 
+
 $dataset = [
     ['Carne', 'Queijo', 'Papel Higienico', 'Tomate'],
     ['Tomate', 'Carne'],
     ['Abacate', 'Carne', 'Fraldas'],
     ['Carne', 'Queijo', 'Leite', 'Tomate'],
-    ['Tomate', 'Ovos','Leite'],
+    ['Tomate', 'Ovos', 'Leite'],
     ['Refrigerante', 'Cerveja', 'Fraldas'],
     ['Fraldas', 'Queijo', 'Papel Higienico', 'Tomate'],
     ['Tomate', 'Repolho'],
     ['Limão', 'Carne', 'Fraldas'],
 ];
 
-$associate = new \KaioSouza\Association\Association($dataset);
+$associate = new \Association\Association();
 
+$associate->setDataset($dataset);
 print_r($associate->getMoreFrequentlyItem()); // 1 Item sem a estatistica de suporte
 echo "\n";
 

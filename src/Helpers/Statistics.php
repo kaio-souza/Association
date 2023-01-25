@@ -1,12 +1,12 @@
 <?php
 
-namespace KaioSouza\Association\Helpers;
+namespace Association\Helpers;
 
-use KaioSouza\Association\Exceptions\InvalidInputToAssociate;
+use Association\Exceptions\InvalidInputToAssociate;
 
 /**
  * Class Statistics
- * @package KaioSouza\Association\Helpers
+ * @package Association\Helpers
  */
 class Statistics
 {
