@@ -45,16 +45,17 @@ $array = [
     ['Abacate', 'Carne', 'Fraldas'],
 ];
 $associate->setDataset($array);
+```
 
+```php
 //Através do caminho de um CSV
 $associate->setDataset('./path_to_file.csv');
+```
 
-
-
+```php
 //Através de um resource CSV
 $file = fopen('./dataset.csv', 'r');
 $associate->setDataset($file);
-
 ```
 
 
