@@ -43,7 +43,7 @@ class AssociationService
     }
 
     public function validateDataSet(){
-        if(!$this->dataset)
+        if(!$this->dataset && !$this->supportList)
             throw new DatasetNotDefined;
     }
 

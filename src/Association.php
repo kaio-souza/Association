@@ -9,6 +9,7 @@ use Association\Services\AssociationService;
 class Association
 {
     private $associationService;
+    private $storedResults = [];
 
     public function __construct($dataset = null, $threshold = null)
     {
@@ -42,10 +43,22 @@ class Association
         return $showSupportValue ? $results : array_keys($results);
     }
 
-    public function setDataset( $dataset){
+    public function setDataset($dataset)
+    {
         $this->associationService->setDataset($dataset);
         return $this;
     }
 
+    public function saveDataset($path)
+    {
+        $content = serialize($this->associationService->supportList);
+        return file_put_contents($path, $content);
+    }
+
+    public function loadDataset($path)
+    {
+        $content = file_get_contents($path);
+        $this->associationService->supportList = unserialize($content);
+    }
 
 }

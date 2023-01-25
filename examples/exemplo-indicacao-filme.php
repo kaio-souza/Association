@@ -3,8 +3,8 @@ require_once '../vendor/autoload.php';
 
 
 $dataset = [
-    ['Carne', 'Queijo', 'Papel Higienico', 'Tomate'],
-    ['Tomate', 'Carne'],
+    ['Carne', 'Queijo', 'Papel Higienico', 'Tomate'], // Cliente 1
+    ['Tomate', 'Carne'], // Cliente 2
     ['Abacate', 'Carne', 'Fraldas'],
     ['Carne', 'Queijo', 'Leite', 'Tomate'],
     ['Tomate', 'Ovos', 'Leite'],
@@ -34,3 +34,5 @@ print_r($associate->getCombinations('Carne', 2));
 echo "\n";
 
 print_r($associate->getCombinations('Carne', 3, true));
+
+$associate->saveDataset('./data.set');

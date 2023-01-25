@@ -144,3 +144,20 @@ Array
 
 **/
 ```
+
+
+## Salvando e carregando dados processados
+Para salvar, após ter carregado o Dataset, basta chamar o método saveDataset informando o caminho onde salvaremos o Dataset processado
+```php
+$associate->saveDataset('./path_to_save_data');
+````
+
+```php
+$associate = new \Association\Association();
+$associate->loadDataset('./path_to_saved_file');
+
+// Após carregar a informação processada é só utilizar...
+print_r($associate->getCombinations('Carne'));
+````
+
+
